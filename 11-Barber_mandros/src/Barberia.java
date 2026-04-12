@@ -6,6 +6,13 @@ public class Barberia implements Runnable {
     public Object condBarber;
     private static Barberia instance;
 
+    public static void main(String[] args) {
+        Barberia barberia = new Barberia(3);
+        Barber barber = new Barber("Pepe", barberia);
+        barber.start();
+        new Thread(barberia).start();
+    }
+
     public Barberia(int maxCadires) {
         this.maxCadires = maxCadires;
         this.salaEspera = new LinkedList<>();
@@ -56,10 +63,4 @@ public class Barberia implements Runnable {
         }
     }
 
-    public static void main(String[] args) {
-        Barberia barberia = new Barberia(3);
-        Barber barber = new Barber("Pepe", barberia);
-        barber.start();
-        new Thread(barberia).start();
-    }
 }

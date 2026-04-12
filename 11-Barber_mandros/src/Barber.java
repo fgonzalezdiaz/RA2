@@ -15,7 +15,7 @@ public class Barber extends Thread {
                 System.out.println("Li toca al client " + client.getNom());
                 System.out.println("Tallant cabell a " + client.getNom());
                 try {
-                    Thread.sleep(900 + (int)(Math.random() * 100));
+                    Thread.sleep(900 + (int) (Math.random() * 100));
                 } catch (InterruptedException e) {
                     e.printStackTrace();
                 }
